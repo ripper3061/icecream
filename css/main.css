@@ -17,7 +17,6 @@
 /* убирает 4px у картинок в ссылках и адаптация картинок по ширине */
 img {
   display: block;
-  width: 100%;
 }
 
 /* убирает точки и margin в списках */
@@ -49,8 +48,8 @@ img {
 body {
   background-color: var(--primary-white-color);
   color: var(--primary-text-color);
-  font-family: Roboto, sans-serif;
-  font-weight: 400;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
   font-size: 14px;
   letter-spacing: 0.03em;
 }
@@ -90,8 +89,19 @@ body {
 .container {
   margin-left: auto;
   margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+}
+@media screen and (min-width: 320px) {
+  .container {
+    width: 320px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media screen and (max-width: 479.98px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 @media screen and (min-width: 480px) {
   .container {
@@ -101,26 +111,39 @@ body {
 @media screen and (min-width: 768px) {
   .container {
     width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
   }
 }
 @media screen and (min-width: 1200px) {
   .container {
     width: 1200px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
 
 /* логотип */
 .logo {
-  color: var(--primary-black-color);
-  font-family: Raleway, sans-serif;
-  font-weight: 700;
-  font-size: 26px;
-  line-height: 1.2;
+  display: flex;
+  align-items: center;
   text-decoration: none;
 }
 
-.logo-web {
-  color: var(--accent-color);
+.logo-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.logo-text {
+  color: #d41443;
+  font-family: "Titan One";
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 1.15;
+  text-transform: uppercase;
+  margin: 0;
+  margin-left: 20px;
 }
 
 @media screen and (min-width: 768px) {
@@ -132,39 +155,61 @@ body {
 .mobile-menu__main {
   display: flex;
   align-items: center;
+  margin: 8px 0px;
 }
 
 .mobile-menu__open {
   border: none;
   background-color: transparent;
+  fill: #d41443;
   padding: 0;
-  margin-top: 10px;
-  margin-bottom: 10px;
   margin-left: auto;
   transition: fill 250ms var(--animation-function);
 }
 .mobile-menu__open:hover, .mobile-menu__open:focus {
-  fill: var(--accent-color);
+  fill: #ecebeb;
 }
 
 .mobile-menu__hidden {
   position: fixed;
   left: 0;
   top: 0;
-  width: 100vw;
+  width: 75vw;
   height: 100vh;
   z-index: 10;
   display: flex;
   flex-direction: column;
-  background-color: var(--primary-white-color);
-  padding: 48px 25px;
-  font-weight: 500;
-  transform: translateX(100%);
+  background-color: #e17992;
+  padding-top: 60px;
+  transform: translateX(100vw);
   transition: transform 250ms var(--animation-function);
 }
 
 .mobile-menu__hidden.is-open {
-  transform: translateX(0);
+  transform: translateX(25vw);
+}
+
+.menu__button {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #d41443;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.31;
+  text-align: center;
+  cursor: pointer;
+  width: 209px;
+  height: 44px;
+  border: 0px;
+  border-radius: 22px;
+  padding: 10px 32px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  transition: background-color 250ms var(--animation-function);
+}
+.menu__button:hover, .menu__button:focus {
+  background-color: #ecebeb;
 }
 
 /* ссылки навигации */
@@ -177,25 +222,31 @@ body {
 }
 
 .mobile-hidden__item {
-  margin-bottom: 32px;
+  display: flex;
+  height: 42px;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 20px;
+  border-top: 1px solid #e18298;
+  border-bottom: 1px solid #e18298;
 }
 .mobile-hidden__item:last-child {
   margin-bottom: 0;
 }
 
 .mobile-hidden__link {
-  color: var(--secondary-title-color);
+  color: #ffffff;
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.29;
   text-decoration: none;
   display: block;
   transition: color 250ms var(--animation-function);
 }
 .mobile-hidden__link:hover, .mobile-hidden__link:focus {
-  color: var(--accent-color);
-}
-
-.mobile-hidden__link--current {
-  display: block;
-  color: var(--accent-color);
+  color: #d41443;
 }
 
 /* Контакты в шапке */
@@ -279,7 +330,9 @@ body {
 }
 
 .header {
-  border-bottom: 1px solid #ececec;
+  position: absolute;
+  width: 100%;
+  z-index: 5;
 }
 
 @media screen and (max-width: 767.98px) {
@@ -391,60 +444,43 @@ body {
 .hero {
   display: flex;
   align-items: center;
-  text-align: center;
   background-color: var(--secondary-title-color);
   max-width: 480px;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 118px;
-  padding-bottom: 118px;
-  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/hero-mob-1x.jpg");
-  background-position: center;
-  background-size: cover;
+  padding-top: 194px;
+  padding-bottom: 158px;
+  background-color: #ffb8ca;
 }
-@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-  .hero {
-    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/hero-mob-2x.jpg");
-  }
+.ball {
+  position: absolute;
+  top: 83px;
+  left: 36px;
+  display: inline-block;
+  width: 346px;
+  height: 344px;
+  background-color: #ffa5ba;
+  border-radius: 50%;
 }
-@media screen and (min-width: 768px) {
-  .hero {
-    max-width: 768px;
-    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/hero-tab-1x.jpg");
-    background-position: center;
-    background-size: cover;
-  }
-}
-@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
-  .hero {
-    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/hero-tab-2x.jpg");
-  }
-}
-@media screen and (min-width: 1200px) {
-  .hero {
-    max-width: 1600px;
-    padding-top: 200px;
-    padding-bottom: 200px;
-    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/hero-1x.jpg");
-    background-position: center;
-    background-size: cover;
-  }
-}
-@media screen and (min-width: 1200px) and (min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (min-resolution: 192dpi), screen and (min-width: 1200px) and (min-resolution: 2dppx) {
-  .hero {
-    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/hero-2x.jpg");
-  }
+
+.hero__img {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .hero__title {
-  color: var(--primary-white-color);
-  font-weight: 900;
+  position: relative;
+  width: 220px;
+  font-family: "Titan One";
+  font-weight: 400;
   font-size: 26px;
-  line-height: 1.62;
-  letter-spacing: 0.06em;
+  line-height: 1.25;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
+  color: #ffffff;
   margin-top: 0px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 @media screen and (min-width: 1200px) {
   .hero__title {
@@ -453,26 +489,48 @@ body {
   }
 }
 
+.hero__title--color {
+  font-size: 48px;
+  line-height: 0.96;
+  color: #d41443;
+}
+
 /* кнопка в индекс */
+.hero-buttons {
+  position: relative;
+  display: flex;
+  width: 220px;
+}
+
 .hero__button {
   display: inline-block;
-  background-color: var(--accent-color);
-  color: var(--primary-white-color);
-  font-family: Roboto, sans-serif;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.87;
+  background-color: #d41443;
+  color: #ffffff;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 1.25;
   text-align: center;
+  justify-content: center;
+  text-decoration: none;
   cursor: pointer;
-  min-width: 200px;
-  height: 50px;
+  min-width: 61px;
   border: 0px;
-  border-radius: 4px;
-  padding: 10px 32px;
+  border-radius: 22px;
+  padding: 9px 14px;
+  margin: 0;
   transition: background-color 250ms var(--animation-function);
 }
 .hero__button:hover, .hero__button:focus {
-  background-color: #188ce8;
+  background-color: #c7133e;
+}
+.hero__button:last-child {
+  background-color: #ffffff;
+  color: #d41443;
+  margin-left: 8px;
+}
+.hero__button:last-child:hover, .hero__button:last-child:focus {
+  background-color: #ecebeb;
 }
 
 .backdrop {

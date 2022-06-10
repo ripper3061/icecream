@@ -1,5 +1,7 @@
 .header {
-  border-bottom: 1px solid #ececec;
+  position: absolute;
+  width: 100%;
+  z-index: 5;
 }
 
 .container__header {

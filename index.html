@@ -5,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Студия</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Titan+One&display=swap"
       rel="stylesheet"
     />
     <link
@@ -21,7 +23,14 @@
       <div class="container mobile-menu">
         <div class="mobile-menu__main">
           <a href="./index.html" class="logo">
-            <span class="logo-web">Web</span>Studio</a
+            <img
+              src="./images/logo.png"
+              width="50"
+              height="50"
+              class="logo-icon"
+              alt="icon"
+            />
+            <p class="logo-text">icecream</p></a
           >
 
           <button
@@ -37,53 +46,26 @@
         </div>
 
         <div class="mobile-menu__hidden js-menu-container" id="mobile-menu">
+          <button type="button" class="menu__button" data-modal-open>
+            Buy now
+          </button>
           <ul class="mobile-hidden__list list">
             <li class="mobile-hidden__item">
-              <a
-                href="./index.html"
-                class="mobile-hidden__link mobile-hidden__link--current"
-                >Студия</a
-              >
+              <a href="./index.html" class="mobile-hidden__link">Home</a>
             </li>
             <li class="mobile-hidden__item">
               <a href="./portfolio.html" class="mobile-hidden__link"
-                >Портфолио</a
+                >About us</a
               >
             </li>
             <li class="mobile-hidden__item">
-              <a href="" class="mobile-hidden__link">Контакты</a>
+              <a href="" class="mobile-hidden__link">How it’s made?</a>
             </li>
-          </ul>
-          <ul class="mobile-hidden-contacts list">
-            <li class="mobile-hidden-contacts__item tel">
-              <a
-                href="tel:+380961111111"
-                class="mobile-hidden-contacts__contact tel--color"
-              >
-                +38 096 111 11 11</a
-              >
+            <li class="mobile-hidden__item">
+              <a href="" class="mobile-hidden__link">Our products</a>
             </li>
-            <li class="mobile-hidden-contacts__item mail">
-              <a
-                href="mailto:info@devstudio.com"
-                class="mobile-hidden-contacts__contact"
-              >
-                info@devstudio.com</a
-              >
-            </li>
-          </ul>
-          <ul class="mobile-hidden-soc list">
-            <li class="mobile-hidden-soc__item">
-              <a href="" class="mobile-hidden-soc_link">Instagram</a>
-            </li>
-            <li class="mobile-hidden-soc__item">
-              <a href="" class="mobile-hidden-soc_link">Twitter</a>
-            </li>
-            <li class="mobile-hidden-soc__item">
-              <a href="" class="mobile-hidden-soc_link">Facebook</a>
-            </li>
-            <li class="mobile-hidden-soc__item">
-              <a href="" class="mobile-hidden-soc_link">LinkedIn</a>
+            <li class="mobile-hidden__item">
+              <a href="" class="mobile-hidden__link">Contact</a>
             </li>
           </ul>
 
@@ -142,16 +124,18 @@
       <!-- hero -->
       <section class="hero">
         <div class="container">
+          <div class="ball"></div>
+          <img src="./images/slider.png" class="hero__img" width="171" alt="icecream">
           <h1 class="hero__title">
-            Эффективные решения<br />для вашего бизнеса
+            ice cream made with <span class="hero__title--color">passion</span>
           </h1>
-          <button type="button" class="hero__button" data-modal-open>
-            Заказать услугу
-          </button>
+          <div class="hero-buttons">
+            <a href="" class="hero__button">Products</a>
+            <a href="" class="hero__button">How it’s made?</a>
+          </div>
         </div>
       </section>
     </main>
-    >
 
     <!-- Backdrop -->
     <div class="backdrop is-hidden" data-modal>
