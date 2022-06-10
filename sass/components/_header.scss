@@ -1,0 +1,117 @@
+.header {
+  border-bottom: 1px solid #ececec;
+}
+
+.container__header {
+  @media screen and (max-width: 767.98px) {
+    display: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* ссылки навигации */
+.main-nav__list {
+  display: flex;
+  margin-left: 88px;
+  @media screen and (min-width: 1200px) {
+    margin-left: 93px;
+  }
+}
+
+.main-nav__item + .main-nav__item {
+  margin-left: 50px;
+}
+
+.main-nav__link {
+  position: relative;
+  color: var(--secondary-title-color);
+  font-weight: 500;
+  line-height: 1.33;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  transition: color 250ms var(--animation-function);
+
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
+}
+
+.main-nav__link--current {
+  display: block;
+  color: var(--accent-color);
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #2196f3;
+    border-radius: 2px;
+  }
+}
+
+/* Контакты в шапке */
+.nav-contacts {
+  margin-left: 84px;
+
+  fill: currentColor;
+
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    margin-left: auto;
+  }
+}
+
+.nav-contacts__item {
+  @media screen and (min-width: 1200px) {
+    margin-right: 50px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.nav-contacts__contact {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--primary-text-color);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.02em;
+
+  text-decoration: none;
+
+  transition: color 250ms var(--animation-function),
+    fill 250ms var(--animation-function);
+
+  @media screen and (min-width: 1200px) {
+    font-size: 14px;
+    line-height: 1.33;
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+    fill: var(--accent-color);
+  }
+}
+
+.nav-contacts__icon {
+  margin-right: 10px;
+}

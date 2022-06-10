@@ -1,0 +1,47 @@
+.btn-projects {
+  display: flex;
+  margin: -4px;
+
+  @media screen and (max-width: 767.98px) {
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1199.98px) {
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  @media screen and (min-width: 1200px) {
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+}
+
+.btn-projects .button {
+  display: inline-block;
+  background-color: var(--bcg-button-color);
+  color: var(--secondary-title-color);
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.62;
+  text-align: center;
+  cursor: pointer;
+
+  padding: 6px 22px;
+  margin: 4px;
+  border: 0px;
+  border-radius: 4px;
+
+  transition: background-color 250ms var(--animation-function),
+    color 250ms var(--animation-function),
+    box-shadow 250ms var(--animation-function);
+
+  &:hover,
+  &:focus {
+    background-color: var(--accent-color);
+    color: var(--primary-white-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 2px 2px rgba(0, 0, 0, 0.12);
+  }
+}
